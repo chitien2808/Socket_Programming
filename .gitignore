@@ -1,0 +1,10 @@
+__pycache__/
+client/__pycache__
+client/GUI/__pycache__/
+client/GUI/tempCodeRunnerFile.py
+client/test.py
+client/tempCodeRunnerFile.py
+server/__pycache__
+server/GUI/__pycache__
+server/test.py
+dsd

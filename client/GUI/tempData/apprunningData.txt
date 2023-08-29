@@ -1,0 +1,8 @@
+10304,online-video-cutter.com đang chia sẻ màn hình của bạn.,42
+260,Notepad,7
+15448,Sever,9
+10304,12T2-04,42
+17476,E:\Downloads\-MMT-Socket-Python--main\server\server.py (3.11.4),6
+17476,*IDLE Shell 3.11.4*,6
+1492,ngrok  tcp 8000,6
+7976,Program Manager,93
