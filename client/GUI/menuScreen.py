@@ -5,7 +5,7 @@ from tkinter import ttk
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import Toplevel, Label, Button, PhotoImage
-from PIL import Image, ImageTk
+# from PIL import Image, ImageTk
 from tkinter.scrolledtext import ScrolledText
 import queue
 import time
@@ -187,8 +187,8 @@ def displayImage(my_scr):
     img_path = os.path.join(script_dir, "tempData/tempImage.png")
 
     # Open and resize the image using Pillow
-    new_width = 495
-    new_height = 455
+    new_width = 510
+    new_height = 435
     with Image.open(img_path) as img:
         img = img.resize((new_width, new_height))
 
