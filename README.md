@@ -68,3 +68,20 @@ Tính năng Keystroke được thiết kế để ghi lại tất cả các sự
 
 ### Shutdown
 Sau khi nhận tín hiệu từ máy client, server chỉ cần thực hiện 1 câu lệnh console `shutdown /s /t 1` để tắt máy.
+
+## Đánh giá
+### Đánh giá mức độ hoàn thành
+|Công việc| Mức độ hoàn thành|
+|---------|------------------|
+|Tạo GUI  | Hoàn thành       |
+|Tính năng xem Process| Hoàn thành|
+|Tính năng xem Running Application| Hoàn thành|
+|Tính năng chụp ảnh màn hình| Hoàn thành|
+|Tính năng bắt phím| Hoàn thành|
+|Tính năng shutdown và disconnect| Hoàn thành|
+### Đánh giá tỉ lệ đóng góp
+|MSSV| Họ và tên| Tỉ lệ đóng góp|
+|-----|--------|----------------|
+|     |        |                |
+
+## Tham khảo
