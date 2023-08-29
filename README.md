@@ -47,6 +47,14 @@ Module ImageGrab của thư viện [Pillow](https://pypi.org/project/Pillow/) d�
 | `sendScreenShot`    | Chụp ảnh màn hình, chuyển nó thành dữ liệu byte và gửi nó qua socket.                   | Server  |
 ### Bắt phím (Keystroke)
 
-
+Tính năng Keystroke được thiết kế để ghi lại tất cả các sự kiện liên quan đến bàn phím trên server và sau đó truyền chúng đến client. Khi người dùng bấm phím "hook" hàm hook sẽ bắt đầu quá trình bắt phím trên máy chủ (quá trình này sẽ được thực hiện trên một thread riêng để luôn giữ kết nối giữa server và client). Các module hỗ trợ bắt phím được cung cấp trong thư viện [pynput](https://pypi.org/project/pynput/).
+| Tên Hàm                | Mô Tả                                                                                                      | Vị Trí  |
+|------------------------|-----------------------------------------------------------------------------------------------------------|---------|
+| `receiveKeylogger`     | Nhận dữ liệu keylogger từ máy chủ, lưu nó và thông báo rằng dữ liệu đã được nhận thành công.             | Client  |
+| `on_key_press`         | Ghi lại mỗi phím được nhấn và lưu chúng vào một tệp.                                                       | Server  |
+| `hook`                 | Khởi tạo một người nghe (listener) để ghi lại mỗi phím được nhấn.                                         | Server  |
+| `deleteKeyLoggerFile`  | Xóa nội dung của tệp keylogger.                                                                           | Server  |
+| `sendKeyLogger`        | Đọc dữ liệu từ tệp keylogger, xóa nó và sau đó gửi nội dung đó đến máy khách.                             | Server  |
+| `startedKeyLogger`     | Khởi động quá trình keylogging bằng cách thiết lập một hook và khởi tạo một thread mới để ghi lại phím.  | Server  |
 
 
