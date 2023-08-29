@@ -16,8 +16,17 @@ Thông qua giao diện người dùng đơn giản, người dùng có thể tru
 2. Xem Running Application
 3. Chụp ảnh màn hình
 4. Bắt phím (keystroke)
-5. Shutdown
+5. Shutdown và disconnect
 ## Chi tiết về các tính năng
+### Tạo kết nối giữa client và server
+Ta sử dụng các hàm được cung cấp bởi thư viện [Socket](https://docs.python.org/3/library/socket.html) để trao đổi dữ liệu thông qua giao thức TCP/IP. Cũng như sử dụng đa luồng để liên kết giữa GUI và phần xử lí logic.
+| Tên Hàm                 | Mô Tả                                                                                                   | Vị Trí  |
+|-------------------------|--------------------------------------------------------------------------------------------------------|---------|
+| `start_client`          | Khởi động kết nối client tới server, xử lý các lệnh từ server trả về và thực hiện chức năng tương ứng.    | Client  |
+| `run_client`            | Chạy ứng dụng cho đến khi nào nhận được lệnh 'QUIT' từ người dùng.                              | Client  |
+| `handleClientSocket`    | Xử lý các lệnh gửi từ máy khách, và thực thi chức năng tương ứng trên máy chủ.                          | Server  |
+| `start_server`          | Bắt đầu máy chủ và lắng nghe các kết nối từ máy khách. Khi có kết nối mới, một thread mới được tạo.    | Server  |
+
 ### Xem process
 Phía server ta sử dụng thư viện [psutil](https://pypi.org/project/psutil/) để có thể tương tác được các process đang chạy,
 sau khi nhận được tín hiệu từ client gửi lên server sẽ lấy thông tin các process và gửi về dưới dạng chuỗi cho phía client.
@@ -57,4 +66,5 @@ Tính năng Keystroke được thiết kế để ghi lại tất cả các sự
 | `sendKeyLogger`        | Đọc dữ liệu từ tệp keylogger, xóa nó và sau đó gửi nội dung đó đến máy khách.                             | Server  |
 | `startedKeyLogger`     | Khởi động quá trình keylogging bằng cách thiết lập một hook và khởi tạo một thread mới để ghi lại phím.  | Server  |
 
-
+### Shutdown
+Sau khi nhận tín hiệu từ máy client, server chỉ cần thực hiện 1 câu lệnh console `shutdown /s /t 1` để tắt máy.
