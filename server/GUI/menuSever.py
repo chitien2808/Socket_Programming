@@ -15,7 +15,7 @@ def open_server():
     config.openServer = True
 
 def menuSeverSetup ():
-    menuSever.geometry("200x150")
+    menuSever.geometry("210x210")
     menuSever.title('Sever')
     menuSever['background'] = COLOUR_BACKGROUND
     menuSever.resizable(False, False)
