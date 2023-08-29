@@ -35,10 +35,18 @@ thư viện [pywinauto](https://pywinauto.readthedocs.io/en/latest/). Tính năn
 | `receiveRunningApp`      | Nhận danh sách ứng dụng đang chạy và ghi vào tệp.                   | Client  |
 | `receiveStatus`          | Nhận trạng thái (kill/open - ok/err).    | Client  |
 | `openApp`                | Mở ứng dụng và gửi trạng thái (thành công hay không)               | Server  |
-| `killRunningApp`         | Tắt ứng dụng đang chạy dựa trên PID và gửi phản hồi.           | Server  |
+| `killRunningApp`         | Tắt ứng dụng đang chạy dựa trên PID và gửi phản hồi.               | Server  |
 | `listRunningApp`         | Lấy danh sách tất cả các ứng dụng đang chạy và gửi cho client.          | Server  |
 
 ### Chụp ảnh màn hình
+Module ImageGrab của thư viện [Pillow](https://pypi.org/project/Pillow/) dễ dàng hỗ trợ ta chụp ảnh màn hình của máy server sau khi nhận tín hiệu từ phía client. Nhiệm vụ còn lại là gửi các bit ảnh về thông qua socket.
+| Tên Hàm             | Mô Tả                                                                                   | Vị Trí  |
+|---------------------|-----------------------------------------------------------------------------------------|---------|
+| `saveImage`         | Mở file dialog để lưu ảnh                                                               | Client  |
+| `readImage`         | Đọc hình ảnh từ socket, lưu trữ nó và thông báo rằng hình ảnh đã được nhận thành công.  | Client  |
+| `sendScreenShot`    | Chụp ảnh màn hình, chuyển nó thành dữ liệu byte và gửi nó qua socket.                   | Server  |
+### Bắt phím (Keystroke)
+
 
 
 
