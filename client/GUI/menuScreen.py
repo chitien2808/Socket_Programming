@@ -5,7 +5,7 @@ from tkinter import ttk
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import Toplevel, Label, Button, PhotoImage
-# from PIL import Image, ImageTk
+from PIL import Image, ImageTk
 from tkinter.scrolledtext import ScrolledText
 import queue
 import time
@@ -197,7 +197,7 @@ def displayImage(my_scr):
 
     label = Label(my_scr, image=img_tk, width=new_width, height=new_height)
     label.image = img_tk  # this is to prevent garbage collection of the img_tk object
-    label.place(relx=0.08, rely=0.1)
+    label.place(relx=0.12, rely=0.19)
 
 #Khi nào merge được connection sẽ dùng để check kết nối   
 def notice1():
