@@ -17,7 +17,7 @@ def start_client():
     # print(communicate.ipHost)
     host = communicate.ipHost if communicate.ipHost else 'localhost'
     print(host)
-    port = 11137
+    port = 8000
     try:
         clientsocket.connect((host, port))
         communicate.status_connection = 2
