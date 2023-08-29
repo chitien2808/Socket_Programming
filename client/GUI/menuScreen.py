@@ -243,11 +243,18 @@ def scr_window():
     my_scr.title('Server Screen')
     my_scr.resizable(False, False)
     my_scr.grab_set()
+    frame1 = ttk.Frame(my_scr)
+    change_frame(frame1)
+    frame1.pack(side="top", pady=10)
+    frame2 = ttk.Frame(my_scr)
+    change_frame(frame2)
+    frame2.pack(side="top", pady=10)
     communicate.src_screen = my_scr
+    
 
-    label = Label(my_scr, bg = "#FFFFFF", width=65, height=30) #width = img_width/3.5, height = img_height/3.2)
+    label = Label(frame2, bg = "#FFFFFF", width=65, height=30) #width = img_width/3.5, height = img_height/3.2)
     # label.image = img
-    label.place(relx = 0.1, rely = 0.1 )
+    label.pack(side="top",pady=5)
 
     script_dir = os.path.dirname(__file__)
     img_path = os.path.join(script_dir, "tempData/tempImage.png")
@@ -259,10 +266,10 @@ def scr_window():
     # img_width = 500
     # img_height = 400
 
-    buton1 = Button(my_scr,text = 'Chụp',bg = COLOUR_BUTTON,fg = COLOUR_FONT,activeforeground = COLOUR_AFTER, font = fontWord, width = 8, height = 16, command = lambda: click_button("screenshot"))
-    buton2 = Button(my_scr,text = 'Lưu',bg = COLOUR_BUTTON,fg = COLOUR_FONT,activeforeground = COLOUR_AFTER, font = fontWord,width = 8, height = 8, command = lambda: click_button("saveimage"))
-    buton1.place(x = 600, y = 65 )
-    buton2.place(x = 600, y = 380 )
+    buton1 = Button(frame1,text = 'Chụp',bg = COLOUR_BUTTON,fg = COLOUR_FONT,activeforeground = COLOUR_AFTER, font = fontWord, width = 20, height = 4, command = lambda: click_button("screenshot"))
+    buton2 = Button(frame1,text = 'Lưu',bg = COLOUR_BUTTON,fg = COLOUR_FONT,activeforeground = COLOUR_AFTER, font = fontWord,width = 20, height = 4, command = lambda: click_button("saveimage"))
+    buton1.pack(side="left",padx=15)
+    buton2.pack(side="left",padx=30)
 
 def send_keyLogger (txt):  
     # click_button(s)
